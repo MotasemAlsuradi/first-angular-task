@@ -18,7 +18,7 @@
     <div class="row mt-5">
         <div class="col-12 col-lg-6 shadow-sm rounded-4 bg-body-tertiary mb-3">
             <div class="d-flex align-items-center w-100">
-                <i class="fa-regular fa-circle-user fs-1 py-3 me-3"></i>
+                <fa-icon [icon]="faCircleUser" class="fs-1 py-3 me-3"></fa-icon>
                 <div class="text-content me-auto">
                     <h6 class="mb-0">Motasem Alsuradi</h6>
                     <p class="mb-0 text-secondary custom-paragraph">Junior Accounting Officer</p>
@@ -31,12 +31,12 @@
             </div>
             <div class="row mt-3 w-100">
                 <div class="d-flex align-items-center">
-                    <i class="fa-regular fa-user text-secondary fs-2 py-3 me-3"></i>
+                    <fa-icon [icon]="faUser" class="text-secondary fs-2 py-3 me-3"></fa-icon>
                     <div class="text-content">
                         <h6 class="mb-0">Reporting To:</h6>
                         <p class="mb-0 text-secondary custom-paragraph">Salwa Assem</p>
                     </div>
-                    <i class="fa-solid fa-chart-simple text-secondary fs-2 py-3 ms-4 me-2"></i>
+                    <fa-icon [icon]="faChartSimple" class="text-secondary fs-2 py-3 ms-4 me-2"></fa-icon>
                     <div class="text-content">
                         <h6 class="mb-0">Corporate Level:</h6>
                         <p class="mb-0 text-secondary custom-paragraph">Level 10</p>
@@ -49,7 +49,7 @@
                 <div class="row w-100">
                     <div class="col-6 d-flex justify-content-center align-items-center">
                         <div>
-                            <i class="fa-solid fa-list-check custom-icon"></i>
+                          <fa-icon [icon]="faListCheck" class="custom-icon"></fa-icon>
                             <p class="mb-0 fs-5 text-center">Vacation <br> Requests</p>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                 <div class="row w-100">
                     <div class="col-6 d-flex justify-content-center align-items-center">
                         <div>
-                            <i class="fa-solid fa-list-check custom-icon"></i>
+                          <fa-icon [icon]="faListCheck" class="custom-icon"></fa-icon>
                             <p class="mb-0 fs-5 text-center">Vacation <br> Requests</p>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
   <div class="container bg-body-tertiary p-3 mt-5 mb-5 shadow rounded-4">
     <nav class="navbar">
       <a class="navbar-brand ms-3">
-        <i class="fa-solid fa-list-check text-success me-1"></i>Vacation Requests
+        <fa-icon [icon]="faListCheck" class="text-success me-1"></fa-icon>Vacation Requests
       </a>
       <form class="d-flex position-relative me-3" role="search">
         <input class="form-control rounded-4" type="search" placeholder="Search..." aria-label="Search"
@@ -135,7 +135,7 @@
       <div *ngFor="let vacation of filteredVacationData" class="card p-2 mb-2 mx-auto border-top-0 shadow" style="width: 18rem;">
         <img [src]="vacation.imgSrc" class="card-img-top mt-4" alt="">
         <div class="card-body">
-          <h5 class="card-title">{{ vacation.name }}</h5>
+          <h5 [innerHTML]="vacation.name | highlightedText" class="card-title"></h5>
           <p class="card-text mb-0">Submitted on:</p>
           <h6 class="submit-value">{{ vacation.submittedOn }}</h6>
           <p class="card-text mb-0">Duration:</p>

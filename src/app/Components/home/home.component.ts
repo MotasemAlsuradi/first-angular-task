@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Import CommonModule for condational
 import { FormsModule } from '@angular/forms'; // Import FormsModule for ngModel
 import { HighlightedInputTextPipe } from '../Pipes/highlighted-input-text-pipe.pipe'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faUser, faUserCircle, faChartSimple, faListCheck } from '@fortawesome/free-solid-svg-icons';
 
 interface Vacation {
   imgSrc: string;
@@ -17,12 +19,18 @@ interface Vacation {
   imports: [
     CommonModule,
     FormsModule,
-    HighlightedInputTextPipe
+    HighlightedInputTextPipe,
+    FontAwesomeModule
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  faUser = faUser;
+  faCircleUser = faUserCircle;
+  faChartSimple = faChartSimple;
+  faListCheck = faListCheck;
+
   vacationData: Vacation[] = [
     {
       imgSrc: "assets/img/profile-1.jpg",
